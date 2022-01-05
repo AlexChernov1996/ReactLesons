@@ -2,19 +2,19 @@ import React, {useState} from 'react';
 import './onOff.css'
 
 type OnOffPropsType = {
-    //active: boolean
+    on: boolean
+    onClick:(on:boolean)=>void
 }
 const OnOff = (props: OnOffPropsType) => {
-    const [on, setOn] = useState(false)
     return (
         <div className={'wrapper'}>
-            <span className={on ? 'on on-active' : 'on'} onClick={() => {
-                setOn(true)
+            <span className={props.on ? 'on on-active' : 'on'} onClick={() => {
+                props.onClick(true)
             }}>on</span>
-            <span className={on ? 'off' : 'off off-active'} onClick={() => {
-                setOn(false)
+            <span className={props.on ? 'off' : 'off off-active'} onClick={() => {
+                props.onClick(false)
             }}>off</span>
-            <span className={on ? 'indicate on-active' : 'indicate off-active'}/>
+            <span className={props.on ? 'indicate on-active' : 'indicate off-active'}/>
 
         </div>
     );
