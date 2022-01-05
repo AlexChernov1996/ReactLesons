@@ -1,0 +1,27 @@
+.wrapper{
+display: flex;
+}
+.on{
+    border: 1px solid;
+    margin: 2px;
+    padding: 3px;
+}
+.off{
+    border: 1px solid;
+    margin: 2px;
+    padding: 3px;
+}
+.indicate{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid;
+    justify-content: center;
+    align-items: center;
+}
+.on-active{
+    background-color: green;
+}
+.off-active{
+    background-color: red;
+}
