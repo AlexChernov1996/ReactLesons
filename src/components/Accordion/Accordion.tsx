@@ -1,34 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
+import {AccordionItemsType} from "../../App";
 type AccordionPropsType = {
     title:string
-    onClick: (collapsed:boolean) => void
-    collapsed:boolean
+    items:AccordionItemsType[]
 }
 export function Accordion(props: AccordionPropsType) {
+    const [collapsed,setCollapsed] = useState(true)
         return(
         <div>
-            <AccordionTitle title={props.title} onClick={()=>props.onClick(!props.collapsed)}  />
-            {!props.collapsed && <AccordionBody/>}
+            <AccordionTitle title={props.title} onClick={()=>setCollapsed(!collapsed)}  />
+            {!collapsed && <AccordionBody items = {props.items}/>}
         </div>
     )
 }
 type AccordionTitlePropsType = {
     title:string
     onClick: ()=>void
+
 }
 function AccordionTitle(props:AccordionTitlePropsType) {
     return (
         <h2 onClick={()=>{props.onClick()} }>{props.title}</h2>
     )
 }
-
-function AccordionBody()
+type AccordionBodyType={
+    items:AccordionItemsType[]
+}
+function AccordionBody(props:AccordionBodyType)
 {
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {props.items.map(i=><li onClick={()=>alert(`User with id ${i.id} should be happy`)}>{i.name}</li>)}
         </ul>
     )
 }
