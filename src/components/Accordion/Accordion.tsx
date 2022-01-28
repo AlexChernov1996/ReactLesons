@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {AccordionItemsType} from "../../App";
+import "./acordion.css"
 type AccordionPropsType = {
     title:string
     items:AccordionItemsType[]
@@ -20,7 +21,7 @@ type AccordionTitlePropsType = {
 }
 function AccordionTitle(props:AccordionTitlePropsType) {
     return (
-        <h2 onClick={()=>{props.onClick()} }>{props.title}</h2>
+        <h2 className='accordion' onClick={()=>{props.onClick()} }>{props.title}</h2>
     )
 }
 type AccordionBodyType={
@@ -29,8 +30,8 @@ type AccordionBodyType={
 function AccordionBody(props:AccordionBodyType)
 {
     return (
-        <ul>
-            {props.items.map(i=><li onClick={()=>alert(`User with id ${i.id} should be happy`)}>{i.name}</li>)}
-        </ul>
+        <div>
+            {props.items.map(i=><span className ='panel'>{i.name}</span>)}
+        </div>
     )
 }
