@@ -8,6 +8,10 @@ import ControlledCheckBox from "./components/CheckBox/ControlledCheckBox";
 import ControlledSelector from "./components/Selector/ControlledSelector";
 import {CastomSelector} from "./components/Selector/CastomSelector";
 import {ExampleMemo} from "./components/ReactMemo/ReactMemo";
+import {UseMemoEx1} from "./components/UseMemo/UseMemoEx1";
+import {ExampleMemo2} from "./components/UseMemo/UseMemoEx2";
+import {Clock} from "./components/UseEffectExample";
+import PressTracker from "./components/PressTracker/PressTracker";
 export type AccordionItemsType = {
     name:string
     id:number
@@ -28,7 +32,10 @@ function App() {
             {/*<ControlledInput inputValue={inputValue} onChangeValue={setInputValue} />*/}
             {/*<Accordion title = {"Menu"}items={accordionItems}/>*/}
             {/*<OnOff on = {on} onClick={setOn}/>*/}
-            <ExampleMemo/>
+            {/*<ExampleMemo/>*/}
+            {/*<ExampleMemo2/>*/}
+            <Clock/>
+            <PressTracker/>
         </div>
     );
 }
